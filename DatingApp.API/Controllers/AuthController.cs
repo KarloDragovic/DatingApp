@@ -15,7 +15,6 @@ using System.Threading.Tasks;
 
 namespace DatingApp.API.Controllers
 {
-    
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
@@ -48,10 +47,11 @@ namespace DatingApp.API.Controllers
 
             return StatusCode(201);
         }
-
+        
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
         {
+
             var userFromRepo = await _repo.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password);
 
             if(userFromRepo == null)
