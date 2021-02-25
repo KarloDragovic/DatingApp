@@ -13,7 +13,6 @@ decodedToken: any;
 
 constructor(private http: HttpClient) { }
 
-// tslint:disable-next-line:typedef
 login(model: any){
   return this.http.post(this.baseUrl + 'login', model)
     .pipe(
